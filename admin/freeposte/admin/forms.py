@@ -71,9 +71,7 @@ class UserPasswordForm(Form):
 
 class UserForwardForm(Form):
     forward_enabled = fields.BooleanField('Enable forwarding')
-    forward_destination = fields.StringField(
-        'Destination', [validators.Optional(), validators.Email()]
-    )
+    forward_destination = DestinationField()
     submit = fields.SubmitField('Update')
 
 

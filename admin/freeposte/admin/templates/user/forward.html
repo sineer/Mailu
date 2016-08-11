@@ -17,5 +17,14 @@ Forward emails
   {{ macros.form_field(form.forward_destination,
       **{("enabled" if user.forward_enabled else "disabled"): ""}) }}
   {{ macros.form_field(form.submit) }}
+  <script>
+    $("form").on("submit", function() {
+        $("#forward_destination").removeAttr("disabled");
+    });
+    $("#forward_destination").select2({
+      tags: true,
+      tokenSeparators: [',', ' ']
+    })
+  </script>
 </form>
 {% endblock %}
