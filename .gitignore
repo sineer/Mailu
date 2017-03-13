@@ -5,8 +5,6 @@ __pycache__
 /admin/bin
 /admin/include
 pip-selfcheck.json
-/.env
 /data
 /docker-compose.mac.yml
-/docker-compose.yml
 /.idea

@@ -13,11 +13,11 @@ services:
     volumes:
       - "$ROOT/certs:/certs"
 
-  redis:
-    image: redis:latest
-    restart: always
-    volumes:
-      - "$ROOT/redis:/data"
+#  redis:
+#    image: redis:latest
+#    restart: always
+#    volumes:
+#      - "$ROOT/redis:/data"
 
   imap:
     # build: dovecot
@@ -68,13 +68,13 @@ services:
     volumes:
       - "$ROOT/filter:/var/lib/rspamd"
 
-  antivirus:
-    # build: clamav
-    image: mailu/clamav:$VERSION
-    restart: always
-    env_file: .env
-    volumes:
-      - "$ROOT/filter:/data"
+#  antivirus:
+#    # build: clamav
+#    image: mailu/clamav:$VERSION
+#    restart: always
+#    env_file: .env
+#    volumes:
+#      - "$ROOT/filter:/data"
 
   webdav:
     # build: $WEBDAV
@@ -105,10 +105,10 @@ services:
     volumes:
       - "$ROOT/webmail:/data"
 
-  fetchmail:
-    # build: fetchmail
-    image: mailu/fetchmail:$VERSION
-    restart: always
-    env_file: .env
-    volumes:
-      - "$ROOT/data:/data"
+#  fetchmail:
+#    # build: fetchmail
+#    image: mailu/fetchmail:$VERSION
+#    restart: always
+#    env_file: .env
+#    volumes:
+#      - "$ROOT/data:/data"
